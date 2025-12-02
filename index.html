@@ -2,4 +2,39 @@
 <html>
 <head><meta charset="utf-8"><title>Placeholder</title></head>
 <body><h1>Coming soon</h1></body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HD Video Finder</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <div class="hero">
+      <h1>HD Video Finder</h1>
+      <p class="subtitle">Crawl a site for video files and highlight the HD ones — all in your browser.</p>
+    </div>
+    <form id="scanForm" class="scan-form">
+      <input type="text" id="startUrlInput" name="startUrl" placeholder="Enter a starting URL (https://example.com)" aria-label="Starting URL" required>
+      <button type="submit" id="scanButton">Scan</button>
+    </form>
+    <div id="errorMessage" role="alert" aria-live="polite"></div>
+  </header>
+
+  <section class="meta-bar" id="metaBar">
+    <span id="metaInfo">Enter a URL to begin scanning.</span>
+    <label class="toggle" id="hdToggleWrapper">
+      <input type="checkbox" id="toggleHdOnly" checked>
+      <span>Show only HD (≥720p)</span>
+    </label>
+  </section>
+
+  <main>
+    <div id="statusMessage" class="status"></div>
+    <div id="videoGrid" class="grid"></div>
+    <div id="emptyState" class="empty">No video files were detected. Try adjusting depth/limits or a different URL.</div>
+  </main>
+</body>
 </html>
